@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Najwa Khairani | My Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #c98d99;
+  --pink-light: #f5e2e4;
+  --pink-pale: #fcf5f2;
+  --cream: #fffaf5;
+  --brown: #634949;
+  --text: #584b4b;
+  --muted: #857575;
+  --white: #fff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.8; }
+a { color: inherit; text-decoration: none; }
+.container { width: min(1080px, 90%); margin: auto; }
+nav { background: var(--cream); border-bottom: 1px solid #efdddd; position: sticky; top: 0; z-index: 5; }
+.nav { min-height: 70px; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+.brand { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--brown); }
+.links { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; color: var(--muted); }
+.links a:hover { color: var(--pink); }
+.hero { padding: 75px 0; background: linear-gradient(135deg, #fcf5f2, #f3dfe2); }
+.hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 50px; align-items: center; }
+.eyebrow { color: #a96e7b; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 12px; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.35; }
+h1 { font-size: clamp(36px, 5vw, 56px); color: var(--brown); margin-bottom: 18px; }
+h2 { font-size: clamp(29px, 4vw, 38px); color: var(--brown); }
+.hero p { margin-bottom: 14px; }
+.motto { font-family: 'Playfair Display', serif; font-size: 21px; font-style: italic; color: #a96e7b; margin: 18px 0; }
+.button { display: inline-block; background: var(--pink); color: white; border-radius: 28px; padding: 11px 22px; font-size: 14px; margin-top: 10px; }
+.photo-frame { max-width: 350px; margin: auto; padding: 11px; background: white; border: 1px solid #e6c7cc; border-radius: 180px 180px 22px 22px; box-shadow: 0 12px 35px #63494918; }
+.photo-frame img { display: block; width: 100%; height: 430px; object-fit: cover; object-position: center top; border-radius: 170px 170px 15px 15px; }
+section { padding: 72px 0; }
+.section-head { text-align: center; margin-bottom: 35px; }
+.section-head p:last-child { color: var(--muted); font-size: 14px; margin-top: 7px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.card { background: white; border: 1px solid #efdfdc; padding: 26px; border-radius: 19px; box-shadow: 0 7px 24px #63494908; }
+.card h3 { color: #a96e7b; font-size: 22px; margin-bottom: 9px; }
+.pink-bg { background: var(--pink-pale); }
+.education { max-width: 750px; margin: auto; background: white; border: 1px solid #e9cbd0; border-radius: 22px; padding: 32px; text-align: center; }
+.education h3 { font-size: 27px; color: var(--brown); }
+.education strong { display: block; color: #a96e7b; margin-top: 8px; }
+.tag { display: inline-block; background: #f8e9e9; color: #9d6672; border-radius: 20px; padding: 3px 11px; font-size: 12px; font-weight: 700; margin-bottom: 12px; }
+.experience-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.number { display: inline-flex; width: 35px; height: 35px; align-items: center; justify-content: center; background: var(--pink-light); color: #a96e7b; border-radius: 50%; font-weight: 700; margin-bottom: 12px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; align-items: start; }
+.gallery-card { background: white; border: 1px solid #efdfdc; border-radius: 18px; overflow: hidden; }
+.gallery-card img { display: block; width: 100%; height: auto; max-height: 520px; object-fit: contain; background: #f8eeee; }
+.gallery-caption { padding: 20px; }
+.gallery-caption h3 { color: var(--brown); font-size: 21px; margin-bottom: 7px; }
+.gallery-caption p { font-size: 14px; color: var(--muted); }
+.placeholder { min-height: 180px; background: #f8e9e9; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; color: #936c73; }
+.placeholder span { font-size: 30px; }
+.placeholder p { font-size: 13px; }
+.value-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+.value { background: white; border: 1px solid #efdfdc; border-radius: 17px; padding: 20px 15px; text-align: center; }
+.value h3 { font-size: 18px; color: var(--brown); margin-bottom: 7px; }
+.value .symbol { color: var(--pink); font-size: 25px; }
+.dream-box { max-width: 800px; margin: auto; text-align: center; padding: 35px; background: linear-gradient(135deg, #f6e5e6, #fff6ef); border: 1px solid #e8c9cd; border-radius: 24px; }
+.dream-box h3 { color: #a96e7b; font-size: 24px; margin-bottom: 10px; }
+.dream-box p + h3 { margin-top: 28px; }
+.closing { background: #6c5152; color: #fffaf5; text-align: center; padding: 60px 0; }
+.closing h2 { color: white; margin-bottom: 16px; }
+.closing .motto { color: #f4d7dc; }
+footer { background: #543f40; color: #f5e5e4; text-align: center; padding: 17px; font-size: 12px; }
+@media(max-width: 760px) {
+  .nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+  .links { gap: 10px; }
+  .hero-grid, .grid-2, .experience-grid, .gallery-grid { grid-template-columns: 1fr; }
+  .hero-grid { gap: 30px; }
+  .photo-frame { max-width: 290px; }
+  .photo-frame img { height: 360px; }
+  section { padding: 52px 0; }
+  .value-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+
+<body>
+<nav>
+  <div class="container nav">
+    <a class="brand" href="#home">Najwa's Portfolio ♡</a>
+    <div class="links">
+      <a href="#about">About Me</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#dreams">My Dreams</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Personal Portfolio · 2026</p>
+      <h1>Growing with Purpose, Learning with Heart.</h1>
+      <p>Halo semuanya! Aku <strong>Najwa Khairani Arifin Tumanggor</strong>, mahasiswa Pendidikan Anak Usia Dini di Universitas Negeri Medan.</p>
+      <p>Aku percaya bahwa setiap pengalaman, sekecil apa pun, selalu membawa pelajaran yang berharga. Aku ingin terus berkembang, mencoba hal-hal baru, dan memperbaiki diri sedikit demi sedikit.</p>
+      <p class="motto">“Big Dreams, More to Learn.”</p>
+      <p>Selamat datang di portofolioku, ruang kecil untuk berbagi perjalanan, pengalaman, pencapaian, dan mimpi yang ingin aku wujudkan.</p>
+      <a class="button" href="#about">Jelajahi Portofolioku ↓</a>
+    </div>
+    <div class="photo-frame">
+      <img src="WhatsApp%20Image%202026-10-27%20at%2020.17.53.jpeg" alt="Foto Najwa Khairani Arifin Tumanggor">
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Get to Know Me</p>
+      <h2>Tentang Diriku</h2>
+      <p>Setiap langkah adalah bagian dari proses bertumbuh.</p>
+    </div>
+    <div class="grid-2">
+      <article class="card">
+        <h3>A Little About Me</h3>
+        <p>Aku adalah pribadi yang senang belajar, mencoba pengalaman baru, dan mengembangkan potensi diri. Aku menyadari bahwa perjalanan untuk menjadi lebih baik membutuhkan waktu, kesabaran, dan kemauan untuk terus belajar.</p>
+      </article>
+      <article class="card">
+        <h3>What I Believe</h3>
+        <p>Bagiku, keberhasilan bukan hanya tentang hasil akhir, tetapi juga tentang keberanian untuk memulai, kesediaan untuk belajar dari kesalahan, dan ketekunan untuk terus melangkah meskipun perlahan.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="pink-bg" id="education">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">My Academic Journey</p>
+      <h2>Pendidikan</h2>
+      <p>Fondasi untuk mewujudkan cita-cita di dunia pendidikan.</p>
+    </div>
+    <div class="education">
+      <h3>Universitas Negeri Medan</h3>
+      <p>Program Studi Pendidikan Anak Usia Dini</p>
+      <strong>Early Childhood Education · Batch 2024</strong>
+      <p style="margin-top:16px">Melalui perkuliahan dan pengalaman lapangan, aku ingin terus memahami kebutuhan anak serta mengembangkan kemampuan untuk menciptakan proses pembelajaran yang bermakna, menyenangkan, dan mendukung tumbuh kembang mereka.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Learning Through Experience</p>
+      <h2>Pengalaman & Aktivitas</h2>
+      <p>Pengalaman yang membentuk keterampilan dan cara pandangku.</p>
+    </div>
+    <div class="experience-grid">
+      <article class="card">
+        <span class="number">01</span>
+        <h3>Magang — TK Balita Schooling</h3>
+        <span class="tag">3 Bulan</span>
+        <p>Melaksanakan magang pada 15 September–15 Desember 2025. Pengalaman ini membantuku mengenal lingkungan pendidikan anak usia dini, mengamati kegiatan pembelajaran, serta belajar mengenai kedisiplinan, tanggung jawab, kerja sama, dan etika dalam lingkungan sekolah.</p>
+      </article>
+      <article class="card">
+        <span class="number">02</span>
+        <h3>PLP — TK Prestige Bilingual School</h3>
+        <span class="tag">Pengalaman Lapangan</span>
+        <p>Melalui kegiatan PLP, aku mendapat kesempatan untuk mengenal praktik pendidikan secara langsung dan memperluas pemahamanku tentang peran pendidik dalam mendampingi proses belajar serta perkembangan anak.</p>
+      </article>
+      <article class="card">
+        <span class="number">03</span>
+        <h3>Dance Teacher</h3>
+        <span class="tag">Mengajar Tari</span>
+        <p>Saat ini aku mengajar tari kepada siswa SMP kelas VII dan VIII. Kegiatan ini melatih kreativitas, komunikasi, kesabaran, dan kedisiplinan, sekaligus memberiku pengalaman dalam membimbing siswa untuk mengembangkan ekspresi melalui seni tari.</p>
+      </article>
+      <article class="card">
+        <span class="number">04</span>
+        <h3>Organisasi Pramuka</h3>
+        <span class="tag">Aktivitas Kampus</span>
+        <p>Aku aktif dalam organisasi Pramuka di kampus. Dari kegiatan ini, aku belajar tentang kerja sama, tanggung jawab, kedisiplinan, kepemimpinan, dan pentingnya berkontribusi dalam sebuah kelompok.</p>
+      </article>
+      <article class="card">
+        <span class="number">05</span>
+        <h3>Lomba Video Edukasi Kesehatan NCAST</h3>
+        <span class="tag">Harapan III</span>
+        <p>Meraih Harapan III dalam lomba video edukasi kesehatan. Pencapaian ini menjadi pengalaman berharga untuk mengembangkan kreativitas dan menyampaikan pesan edukatif melalui media digital.</p>
+      </article>
+      <article class="card">
+        <span class="number">06</span>
+        <h3>Personal Growth</h3>
+        <span class="tag">Terus Berkembang</span>
+        <p>Aku ingin terus membuka diri terhadap pengalaman baru, menerima masukan, dan meningkatkan kemampuan diri. Setiap proses adalah kesempatan untuk mengenali potensi dan memperbaiki kekurangan.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="pink-bg" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">My Journey in Pictures</p>
+      <h2>Dokumentasi & Sertifikat</h2>
+      <p>Beberapa bukti perjalanan dan pengalaman belajarku.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <article class="gallery-card">
+        <img src="WhatsApp%20Image%202026-10-27%20at%2020.10.34.jpeg" alt="Sertifikat magang TK Balita Schooling">
+        <div class="gallery-caption">
+          <h3>Sertifikat Magang</h3>
+          <p>PG/TK Balita Schooling · 15 September–15 Desember 2025</p>
+        </div>
+      </article>
+
+      <article class="gallery-card">
+        <img src="WhatsApp%20Image%202026-10-27%20at%2020.17.53.jpeg" alt="Najwa di lingkungan pendidikan anak usia dini">
+        <div class="gallery-caption">
+          <h3>Pengalaman di Lingkungan PAUD</h3>
+          <p>Pengalaman yang memperkuat ketertarikanku pada dunia pendidikan anak usia dini.</p>
+        </div>
+      </article>
+
+      <article class="gallery-card">
+        <div class="placeholder">
+          <span>♡</span>
+          <strong>Dokumentasi PLP</strong>
+          <p>Foto kegiatan TK Prestige Bilingual School dapat ditambahkan di sini jika tersedia.</p>
+        </div>
+        <div class="gallery-caption">
+          <h3>PLP — TK Prestige Bilingual School</h3>
+          <p>Dokumentasi kegiatan lapangan.</p>
+        </div>
+      </article>
+
+      <article class="gallery-card">
+        <div class="placeholder">
+          <span>✿</span>
+          <strong>Dokumentasi Mengajar Tari</strong>
+          <p>Foto saat mengajar tari untuk siswa SMP kelas VII dan VIII dapat ditambahkan di sini.</p>
+        </div>
+        <div class="gallery-caption">
+          <h3>Dance Teaching</h3>
+          <p>Berbagi kreativitas melalui seni tari.</p>
+        </div>
+      </article>
+
+      <article class="gallery-card">
+        <div class="placeholder">
+          <span>✧</span>
+          <strong>Dokumentasi Pramuka</strong>
+          <p>Tambahkan foto kegiatan organisasi Pramuka jika kamu memilikinya.</p>
+        </div>
+        <div class="gallery-caption">
+          <h3>Campus Organization</h3>
+          <p>Belajar bekerja sama dan bertanggung jawab.</p>
+        </div>
+      </article>
+
+      <article class="gallery-card">
+        <div class="placeholder">
+          <span>♡</span>
+          <strong>Dokumentasi NCAST</strong>
+          <p>Tambahkan sertifikat atau dokumentasi lomba NCAST jika tersedia.</p>
+        </div>
+        <div class="gallery-caption">
+          <h3>Achievement — NCAST</h3>
+          <p>Harapan III · Lomba video edukasi kesehatan.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="values">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">My Personal Values</p>
+      <h2>Nilai yang Aku Pegang</h2>
+      <p>Prinsip yang ingin aku bawa dalam setiap langkah.</p>
+    </div>
+    <div class="value-grid">
+      <article class="value"><div class="symbol">♡</div><h3>Growth</h3><p>Terus belajar dan berkembang.</p></article>
+      <article class="value"><div class="symbol">✿</div><h3>Creativity</h3><p>Berani mencoba hal baru.</p></article>
+      <article class="value"><div class="symbol">✧</div><h3>Responsibility</h3><p>Menjalankan peran dengan sungguh-sungguh.</p></article>
+      <article class="value"><div class="symbol">♡</div><h3>Empathy</h3><p>Menghargai dan memahami orang lain.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="pink-bg" id="dreams">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Dreams for My Future</p>
+      <h2>Mimpi dan Cita-Cita</h2>
+      <p>Hal-hal yang ingin aku wujudkan dalam perjalanan hidupku.</p>
+    </div>
+    <div class="dream-box">
+      <h3>A Dream Beyond the Horizon</h3>
+      <p>Salah satu impian terbesarku adalah berenang di lautan dan menyaksikan keindahan alam secara langsung. Aku ingin terus mengumpulkan pengalaman baru dan menikmati keindahan dunia yang masih ingin aku jelajahi.</p>
+      <h3>Becoming a University Lecturer</h3>
+      <p>Di masa depan, aku ingin menjadi seorang dosen karena aku ingin berbagi ilmu, menginspirasi orang lain, dan ikut berkontribusi dalam dunia pendidikan. Aku berharap dapat menjadi seseorang yang tidak hanya mengajar, tetapi juga mendorong orang lain untuk terus belajar dan percaya pada potensi dirinya.</p>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container">
+    <p class="eyebrow" style="color:#f4d7dc">A Note to Myself</p>
+    <h2>Slowly, Surely, I Will Grow.</h2>
+    <p>Aku tidak harus menjadi sempurna dalam satu hari. Aku hanya perlu terus berusaha, belajar dari pengalaman, dan melangkah dengan keyakinan bahwa setiap usaha memiliki arti.</p>
+    <p class="motto">“Big Dreams, More to Learn.”</p>
+    <p>Terima kasih telah meluangkan waktu untuk mengenal perjalanan dan impianku.</p>
+    <p style="margin-top:22px"><strong>Warm regards,<br>Najwa Khairani Arifin Tumanggor</strong></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  © 2026 Najwa Khairani Arifin Tumanggor · Personal Portfolio
+</footer>
+</body>
+</html>
